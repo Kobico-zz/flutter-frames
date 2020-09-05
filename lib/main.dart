@@ -72,6 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     html.window.addEventListener('message', (event) {
+      print('event from top frame');
+      print(event);
       this.reset();
     });
   }
