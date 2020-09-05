@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: |
-          actions/checkout@v1
+        uses: actions/checkout@v1
+
+      - name: Add Flutter
+        uses: subosito/flutter-action@v1
+            with:
+              channel: 'beta'
 
       - name: Install
-        uses: subosito/flutter-action@v1
-        with:
-            channel: 'beta'
         run: |
           flutter config --enable-web
           flutter pub get
