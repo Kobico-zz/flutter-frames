@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'dart:html' as html;
-import 'dart:js' as js;
 
 void main() {
   runApp(MyApp());
@@ -65,8 +64,21 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void reset() {
+    _counter = 0;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    html.window.addEventListener('message', (event) {
+      this.reset();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
