@@ -15,7 +15,7 @@ jobs:
       - name: Add Flutter
         uses: subosito/flutter-action@v1
         with:
-              channel: 'beta'
+          channel: 'beta'
 
       - name: Install
         run: |
